@@ -6,8 +6,11 @@ USER root
 RUN mkdir ${HZ_HOME}config \ 
  && mv ${HZ_HOME}hazelcast.xml ${HZ_HOME}config/ \ 
  && ln -s ${HZ_HOME}config/hazelcast.xml ${HZ_HOME}hazelcast.xml 
-  
-USER default 
+
+RUN groupadd -r hazelcast \
+ && useradd -r -g hazelcast 
+
+USER hazelcast 
   
 # Start hazelcast standalone server. 
 CMD ./start.sh 
