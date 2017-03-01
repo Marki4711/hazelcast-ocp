@@ -1,4 +1,4 @@
-FROM hazelcast/openshift:latest 
+FROM hazelcast/openshift:3.7.5 
   
 USER root 
   
