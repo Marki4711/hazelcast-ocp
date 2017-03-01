@@ -7,8 +7,7 @@ RUN mkdir ${HZ_HOME}config \
  && mv ${HZ_HOME}hazelcast.xml ${HZ_HOME}config/ \ 
  && ln -s ${HZ_HOME}config/hazelcast.xml ${HZ_HOME}hazelcast.xml 
 
-RUN groupadd -r hazelcast \
- && useradd -r -g hazelcast 
+RUN useradd -r hazelcast 
 
 USER hazelcast 
   
